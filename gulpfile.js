@@ -14,6 +14,9 @@ function toNPMPaths (module) {
 gulp.task('js',()=>{
     return gulp.src('src/js/index.ts')
         .pipe(webpack(require('./webpack.config.js')))
+        .on('error', function handleError(){
+            this.emit('end')
+        })
         //.pipe(uglify())
         .pipe(gulp.dest('dist/js'))
 })
