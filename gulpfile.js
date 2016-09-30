@@ -17,7 +17,7 @@ gulp.task('js',()=>{
         .on('error', function handleError(){
             this.emit('end')
         })
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
 })
 
